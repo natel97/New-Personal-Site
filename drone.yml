@@ -1,0 +1,15 @@
+kind: pipeline
+name: Website-Frontend
+platform:
+  os: linux
+  arch: arm
+steps:
+- name: Install and Tests
+  image: node
+  commands:
+  - npm install
+  - npm test -- --coverage
+trigger:
+  event:
+  - push
+  - pull-request
