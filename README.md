@@ -1,7 +1,8 @@
 # Nathanial Lubitz -- Website -- Frontend
 
 
-[![Build Status](http://drone.nathaniallubitz.com/api/badges/personal-projects/new-website-frontend/status.svg)](http://drone.nathaniallubitz.com/personal-projects/new-website-frontend)
+[![Build Status](https://drone.nathaniallubitz.com/api/badges/personal-projects/website-frontend/status.svg)](https://drone.nathaniallubitz.com/personal-projects/website-frontend)
+
 
 ### This is a complete revamp of the old site
 
