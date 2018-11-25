@@ -1,0 +1,11 @@
+.single-skill {
+  min-width: 128px;
+}
+.all-skills {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  overflow: auto;
+  white-space: nowrap;
+}
