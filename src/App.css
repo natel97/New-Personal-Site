@@ -8,15 +8,15 @@ a {
   color: white;
 }
 
-a::before {
+.arrows-link::before {
   content: '↘';
 }
 
-a::after {
+.arrows-link::after {
   content: '↙';
 }
 
-a::before, a::after {
+.arrows-link::before, a::after {
   position: relative;
   bottom: 6px;
   color: cornflowerblue;

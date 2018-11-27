@@ -10,14 +10,14 @@ export const Construction = function () {
         <p>This website has been outdated for a while!</p>
         <p>
           <span>Don't believe me? </span>
-          <a href="http://old.nathaniallubitz.com">See for yourself!</a>
+          <a className="arrows-link" href="http://old.nathaniallubitz.com">See for yourself!</a>
         </p>
       </div>
       <small>
         <span>Feel free to check out my </span>
-        <a href="https://repo.nathaniallubitz.com/explore/repos">code repository</a>
+        <a className="arrows-link" href="https://repo.nathaniallubitz.com/explore/repos">code repository</a>
         <span> and my </span>
-        <a href="https://github.com/natel97">GitHub account</a>
+        <a className="arrows-link" href="https://github.com/natel97">GitHub account</a>
         <span> in the meantime.</span>
       </small>
     </div>
