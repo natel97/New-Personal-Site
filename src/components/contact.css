@@ -1,0 +1,55 @@
+.contact {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact > a {
+  position: relative;
+  right: 1vh;
+  transition: right 1s;
+}
+
+.contact.desktop {
+  height: 128px;
+}
+
+.contact.mobile {
+  flex-direction: column;
+  width: 128px;
+}
+
+.contact img {
+  height: 64px;
+  width: 64px;
+}
+
+.contact.mobile.hidden > a {
+  right: 100%;
+  transition: right 1s;
+}
+
+.contact.mobile > .toggler {
+  width: 7vw;
+  height: 7vh;
+}
+
+.contact.mobile > div.tint {
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  position: fixed;
+  z-index: -1;
+  transition: background-color 1s;  
+  background-color: transparent;
+  pointer-events: none;
+  content: '';
+}
+.contact.mobile:not(.hidden) > div.tint {
+  background-color: #222222cc;
+  pointer-events: all;
+}

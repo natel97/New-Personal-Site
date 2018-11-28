@@ -5,6 +5,7 @@ import arrow from '../../assets/arrow.svg';
 import Welcome from './Welcome';
 import Navigation from '../Navigation';
 import Skills from './Skills';
+import Contact from '../Contact';
 
 const THRESHOLD = 1;
 
@@ -15,7 +16,7 @@ export default class Index extends Component {
         this.state = {
             page: 0,
             canScroll: true,
-            pages: [<Welcome />, <Skills />, <Construction />]
+            pages: [Welcome, Skills, Construction]
         };
 
         this.bindFunctions();
@@ -89,16 +90,17 @@ export default class Index extends Component {
 
     render() {
         return (
-            
             <div id="page" style={{ top: this.state.page * -100 + 'vh' }}>
-                <Navigation page={this.state.page} length={this.state.pages.length} move={this.navigateToNumber} />
                 <div id="up-container">
                     <img style={{ opacity: +(this.state.page > 0) }} id='up-arrow' src={arrow} alt="up" />
                 </div>
-                {this.state.pages.map((component, index) => <div key={index}>{component}</div>)}
+                {this.state.pages.map((Component, index) =>
+                    <Component key={index} active={index === this.state.page} mobile={this.props.mobile} />)}
                 <div id="down-container">
                     <img style={{ opacity: +(this.state.page < this.state.pages.length - 1) }} id='down-arrow' src={arrow} alt="up" />
                 </div>
+                <Navigation page={this.state.page} length={this.state.pages.length} move={this.navigateToNumber} />
+                <Contact mobile={this.props.mobile} />
             </div>
         )
     }
