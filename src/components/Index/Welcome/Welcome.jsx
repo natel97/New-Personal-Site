@@ -1,5 +1,5 @@
 import React from 'react'
-import nl from '../../assets/nl.png'
+import nl from '../../../assets/nl.png'
 import './welcome.css';
 import PropTypes from 'prop-types';
 
@@ -15,7 +15,6 @@ const Welcome = (props) => {
           <div className="contents">
             <div>
               <h2>Hello, I'm Nathanial Lubitz</h2>
-              <h4>Welcome to my webpage!</h4>
             </div>
             {props.mobile && image}
             <div>

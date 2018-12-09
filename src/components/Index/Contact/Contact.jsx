@@ -1,11 +1,11 @@
 import React from 'react';
 import './contact.css';
-import Email from '../assets/Email.svg';
-import Facebook from '../assets/Facebook.svg';
-import LinkedIn from '../assets/LinkedIn.png';
-import GitHub from '../assets/GitHub.png';
-import Contact from '../assets/Contact.svg'
-import Cancel from '../assets/Cancel.svg';
+import Email from '../../../assets/Email.svg';
+import Facebook from '../../../assets/Facebook.svg';
+import LinkedIn from '../../../assets/LinkedIn.png';
+import GitHub from '../../../assets/GitHub.png';
+import Contact from '../../../assets/Contact.svg'
+import Cancel from '../../../assets/Cancel.svg';
 
 let toggleHidden = (event) => {
   event.target.parentNode.classList.toggle('hidden');

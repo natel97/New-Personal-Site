@@ -1,0 +1,27 @@
+.job {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 2.5% 0;
+}
+
+.details {
+  text-align: left;
+}
+
+.dates {
+  text-align: right;
+}
+
+.position {
+  font-weight: bold;
+}
+
+.location {
+  font-style: italic;
+}
+
+#history {
+  width: 100%;
+  flex: 1;
+}

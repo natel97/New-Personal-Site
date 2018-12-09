@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { Construction } from './Construction';
+import { Construction } from './Construction/Construction';
 import './index.css';
 import arrow from '../../assets/arrow.svg';
-import Welcome from './Welcome';
+import Welcome from './Welcome/Welcome';
 import Navigation from '../Navigation';
-import Skills from './Skills';
-import Contact from '../Contact';
+import Skills from './Skills/Skills';
+import Contact from './Contact/Contact';
+import WorkHistory from './WorkHistory/WorkHistory';
 
 const THRESHOLD = 1;
 
@@ -16,7 +17,7 @@ export default class Index extends Component {
         this.state = {
             page: 0,
             canScroll: true,
-            pages: [Welcome, Skills, Construction]
+            pages: [Welcome, Skills, WorkHistory, Construction]
         };
 
         this.bindFunctions();
