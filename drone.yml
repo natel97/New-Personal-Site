@@ -18,7 +18,13 @@ steps:
   image: node
   commands:
   - npm install
+<<<<<<< HEAD
+  - rm -rf /data/build
+  - npm run build --prod
+  - mv ./build /data/build
+=======
   - npm build --prod
+>>>>>>> master
   when:
     branch:
     - master
