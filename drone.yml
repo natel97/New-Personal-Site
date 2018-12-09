@@ -11,20 +11,27 @@ steps:
   - npm test -- --coverage
   when:
     event:
-    - push
-    - pull-request
+    - pull_request
+    branch:
+    - master
 
 - name: Deploy
   image: node
+  volumes:
+  - name: prod
+    path: /data
   commands:
   - npm install
-<<<<<<< HEAD
-  - rm -rf /data/build
   - npm run build --prod
+  - rm -rf /data/build
   - mv ./build /data/build
-=======
-  - npm build --prod
->>>>>>> master
   when:
+    event:
+    - push
     branch:
     - master
+
+volumes:
+- name: prod
+  host:
+    path: /var/lib/personal-website
