@@ -1,21 +1,33 @@
-#top-content {
-    display: flex;
-    justify-content: space-around;
-    width: 90%;
-}
-
 img {
-    width: 100%;
-    max-width: 50vw;
-    margin: 10px;
+  width: 100%;
 }
 
 .contents {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .hidden {
-    display: none;
+  display: none;
+}
+
+.snap-item {
+  scroll-snap-align: start;
+}
+
+.snap-container {
+  -ms-scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
+}
+
+#root,
+.App,
+body,
+html {
+  height: 100%;
+}
+
+.red-bottom {
+  border-bottom: 3px solid #660500;
 }

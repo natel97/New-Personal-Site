@@ -1,35 +1,91 @@
-import React from 'react'
-import nl from '../../../assets/nl.png'
-import './welcome.css';
-import PropTypes from 'prop-types';
+import React from "react";
+import nl from "../../../assets/nl.jpg";
+import "./welcome.css";
 
+const Image = ({ width, height, className = "", imgClass = "" }) => {
+  return (
+    <div
+      className={`${className}`}
+      style={{ width, height, maxWidth: "500px" }}
+    >
+      <img
+        style={{ width: "100%", alignSelf: "center" }}
+        className={imgClass}
+        src={nl}
+        alt="Nathanial Lubitz"
+      />
+    </div>
+  );
+};
 
-const Welcome = (props) => {
+const links = [
+  {
+    name: "Check out my GitHub account",
+    href: "https://github.com/natel97",
+  },
+  {
+    name: "See my resume",
+    href: "https://resume.nathaniallubitz.com",
+  },
+];
 
+const MainLinks = () => {
+  return (
+    <>
+      {links.map(({ name, href }) => (
+        <a
+          className="link m-2"
+          key={name}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {name}
+        </a>
+      ))}
+    </>
+  );
+};
 
-  let image = (<div>  <img src={nl} alt='Nathanial Lubitz' />  </div>)
+const FillerBanner = () => {
+  // Might do something with a canvas later idk
 
-    return (
-      <div className="single-page">
-        <div id="top-content">
-          <div className="contents">
-            <div>
-              <h2>Hello, I'm Nathanial Lubitz</h2>
-            </div>
-            {props.mobile && image}
-            <div>
-              <p>I am a self-motivated software engineer with a passion for frontend development.</p>
-            </div>
+  return (
+    <div className="flex-col justify-center" style={{ height: "256px" }}>
+      <h1>Hello, I'm Nathanial Lubitz</h1>
+      <h3 className="mx-2">
+        I'm a software engineer with 3 years of experience. My favorite tools
+        include React, NestJS, Java, and Spring.
+      </h3>
+    </div>
+  );
+};
+
+export default ({ mobile }) => {
+  return (
+    <div className="flex-col height-100">
+      {!mobile && <FillerBanner />}
+      <div className="flex-row justify-between">
+        {!mobile && (
+          <div className="flex-col flex-1 align-center my-4">
+            <Image className="width-100 flex-col justify-center" />
           </div>
-          {!props.mobile && image}
+        )}
+        <div className="height-100 flex-col flex-1">
+          {mobile && (
+            <>
+              <Image imgClass="red-bottom" />
+              <h2>Hello, I'm Nathanial Lubitz</h2>
+              <p className="mx-2">
+                I'm a software engineer with 3 years of experience. My favorite
+                tools include React, NestJS, Java, and Spring
+              </p>
+            </>
+          )}
+          <MainLinks />
         </div>
       </div>
-    )
-  }
-
-Welcome.propTypes = {
-  active: PropTypes.bool,
-  mobile: PropTypes.bool
-}
-
-export default Welcome
+      {!mobile && <div style={{ width: "100%", height: "128px" }} />}
+    </div>
+  );
+};

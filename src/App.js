@@ -1,32 +1,32 @@
-import React, { Component } from 'react';
-import './App.css';
-import Index from './components/Index/Index';
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import "./App.css";
+import Contact from "./components/Index/Contact/Contact";
+import "./components/Index/index.css";
+import Welcome from "./components/Index/Welcome/Welcome";
 
-class App extends Component {
+const checkForMobile = () => window.innerWidth < 450;
 
-  constructor(props) {
-    super(props);
-    this.state = {};
-    this.checkForMobile = this.checkForMobile.bind(this);
-  }
+export default () => {
+  const [isMobile, setIsMobile] = useState(checkForMobile());
+  const autoSetMobile = () => setIsMobile(checkForMobile());
 
-  componentDidMount() {
-    this.checkForMobile();
-    window.addEventListener('resize', this.checkForMobile);
-  }
+  useEffect(() => {
+    window.addEventListener("resize", autoSetMobile);
+    return () => window.removeEventListener("resize", autoSetMobile);
+  }, []);
 
-    
-  checkForMobile() {
-    this.setState({ mobile: window.outerWidth < 450 });
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <Index mobile={this.state.mobile} />
-      </div>
-    );
-  }
-}
-
-export default App;
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Switch>
+          <Route
+            path="/"
+            render={(props) => <Welcome mobile={isMobile} {...props} />}
+          />
+        </Switch>
+      </BrowserRouter>
+      <Contact mobile={isMobile} />
+    </div>
+  );
+};
