@@ -20,21 +20,21 @@ const Image = ({ width, height, className = "", imgClass = "" }) => {
 
 const links = [
   {
-    name: "Check out my GitHub account",
+    name: "Check out my GitHub",
     href: "https://github.com/natel97",
   },
   {
-    name: "See my resume",
-    href: "https://resume.nathaniallubitz.com",
-  },
+    name: "I'm starting a blog",
+    href: "https://blog.nathaniallubitz.com"
+  }
 ];
 
 const MainLinks = () => {
   return (
-    <>
+    <div className="flex-col align-center">
       {links.map(({ name, href }) => (
         <a
-          className="link m-2"
+          className="link m-1"
           key={name}
           href={href}
           target="_blank"
@@ -43,19 +43,20 @@ const MainLinks = () => {
           {name}
         </a>
       ))}
-    </>
+    </div>
   );
 };
+const titleText = "Hello, I'm Nathanial Lubitz"
+const titleBody = "I'm a software engineer. My favorite tools include React, NestJS, Java, and Spring."
 
 const FillerBanner = () => {
   // Might do something with a canvas later idk
 
   return (
     <div className="flex-col justify-center" style={{ height: "256px" }}>
-      <h1>Hello, I'm Nathanial Lubitz</h1>
+      <h1>{titleText}</h1>
       <h3 className="mx-2">
-        I'm a software engineer with 3 years of experience. My favorite tools
-        include React, NestJS, Java, and Spring.
+        {titleBody}
       </h3>
     </div>
   );
@@ -75,10 +76,9 @@ export default ({ mobile }) => {
           {mobile && (
             <>
               <Image imgClass="red-bottom" />
-              <h2>Hello, I'm Nathanial Lubitz</h2>
-              <p className="mx-2">
-                I'm a software engineer with 3 years of experience. My favorite
-                tools include React, NestJS, Java, and Spring
+              <h2 className="m-1">{titleText}</h2>
+              <p className="mx-1">
+               {titleBody}
               </p>
             </>
           )}

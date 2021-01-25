@@ -62,6 +62,10 @@ body::after {
   padding: 1rem;
 }
 
+.m-1 {
+  margin: .3rem;
+}
+
 .m-2 {
   margin: 1rem;
 }

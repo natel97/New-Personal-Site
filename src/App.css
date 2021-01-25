@@ -6,7 +6,9 @@
 .link {
   background: #0004;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: .8rem;
+  width: 80%;
+  max-width: 400px;
   text-decoration: none;
   color: white;
   font-weight: bold;
