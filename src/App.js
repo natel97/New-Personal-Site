@@ -7,7 +7,7 @@ import Welcome from "./components/Index/Welcome/Welcome";
 
 const checkForMobile = () => window.innerWidth < 450;
 
-export default () => {
+const App = () => {
   const [isMobile, setIsMobile] = useState(checkForMobile());
   const autoSetMobile = () => setIsMobile(checkForMobile());
 
@@ -30,3 +30,5 @@ export default () => {
     </div>
   );
 };
+
+export default App

@@ -36,32 +36,35 @@ const LinkIcons = ({ open, mobile }) => {
   );
 };
 
-export default ({ mobile }) => {
-  const [isOpen, setIsOpen] = useState(false);
 
+const ContactPage = ({ mobile }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  
   return (
     <div className={`contact ${mobile ? "flex-col" : "flex-row"}`}>
       {isOpen && <h3>Contact Me</h3>}
       <LinkIcons open={isOpen} mobile={mobile} />
       {mobile && (
         <img
-          className="toggler"
-          onClick={() => setIsOpen(!isOpen)}
-          alt="contact-toggle"
-          src={isOpen ? Cancel : Contact}
+        className="toggler"
+        onClick={() => setIsOpen(!isOpen)}
+        alt="contact-toggle"
+        src={isOpen ? Cancel : Contact}
         />
-      )}
+        )}
       {mobile && (
         <div
-          className="tint"
-          style={
-            isOpen
-              ? { backgroundColor: "#000C" }
-              : { backgroundColor: "transparent", pointerEvents: "none" }
-          }
-          onTouchStart={() => setIsOpen(false)}
+        className="tint"
+        style={
+          isOpen
+          ? { backgroundColor: "#000C" }
+          : { backgroundColor: "transparent", pointerEvents: "none" }
+        }
+        onTouchStart={() => setIsOpen(false)}
         />
-      )}
+        )}
     </div>
   );
 };
+
+export default ContactPage

@@ -62,7 +62,7 @@ const FillerBanner = () => {
   );
 };
 
-export default ({ mobile }) => {
+const WelcomePage = ({ mobile }) => {
   return (
     <div className="flex-col height-100">
       {!mobile && <FillerBanner />}
@@ -89,3 +89,5 @@ export default ({ mobile }) => {
     </div>
   );
 };
+
+export default WelcomePage
