@@ -42,7 +42,7 @@ const ContactPage = ({ mobile }) => {
   
   return (
     <div className={`contact ${mobile ? "flex-col" : "flex-row"}`}>
-      {isOpen && <h3>Contact Me</h3>}
+      {isOpen && <h2>Contact Me</h2>}
       <LinkIcons open={isOpen} mobile={mobile} />
       {mobile && (
         <img

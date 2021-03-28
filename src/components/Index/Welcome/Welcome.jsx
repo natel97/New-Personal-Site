@@ -1,5 +1,5 @@
 import React from "react";
-import nl from "../../../assets/nl.jpg";
+import nl from "../../../assets/nathanial-lubitz.jpg";
 import "./welcome.css";
 
 const Image = ({ width, height, className = "", imgClass = "" }) => {
@@ -9,10 +9,10 @@ const Image = ({ width, height, className = "", imgClass = "" }) => {
       style={{ width, height, maxWidth: "500px" }}
     >
       <img
-        style={{ width: "100%", alignSelf: "center" }}
+        style={{ maxWidth: "100%", alignSelf: "center", display: "block" }}
         className={imgClass}
         src={nl}
-        alt="Nathanial Lubitz"
+        alt="Nathanial Lubitz, Software Engineer"
       />
     </div>
   );
@@ -25,8 +25,8 @@ const links = [
   },
   {
     name: "I'm starting a blog",
-    href: "https://blog.nathaniallubitz.com"
-  }
+    href: "https://blog.nathaniallubitz.com",
+  },
 ];
 
 const MainLinks = () => {
@@ -46,8 +46,9 @@ const MainLinks = () => {
     </div>
   );
 };
-const titleText = "Hello, I'm Nathanial Lubitz"
-const titleBody = "I'm a software engineer. My favorite tools include React, NestJS, Java, and Spring."
+const titleText = "Hello, I'm Nathanial Lubitz";
+const titleBody =
+  "I'm a software engineer. My favorite tools include React, NestJS, Java, and Spring.";
 
 const FillerBanner = () => {
   // Might do something with a canvas later idk
@@ -55,9 +56,7 @@ const FillerBanner = () => {
   return (
     <div className="flex-col justify-center" style={{ height: "256px" }}>
       <h1>{titleText}</h1>
-      <h3 className="mx-2">
-        {titleBody}
-      </h3>
+      <h2 className="mx-2">{titleBody}</h2>
     </div>
   );
 };
@@ -76,10 +75,8 @@ const WelcomePage = ({ mobile }) => {
           {mobile && (
             <>
               <Image imgClass="red-bottom" />
-              <h2 className="m-1">{titleText}</h2>
-              <p className="mx-1">
-               {titleBody}
-              </p>
+              <h1 className="m-1">{titleText}</h1>
+              <p className="mx-1">{titleBody}</p>
             </>
           )}
           <MainLinks />
@@ -90,4 +87,4 @@ const WelcomePage = ({ mobile }) => {
   );
 };
 
-export default WelcomePage
+export default WelcomePage;

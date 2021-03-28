@@ -12,15 +12,6 @@ img {
   display: none;
 }
 
-.snap-item {
-  scroll-snap-align: start;
-}
-
-.snap-container {
-  -ms-scroll-snap-type: y mandatory;
-  scroll-snap-type: y mandatory;
-}
-
 #root,
 .App,
 body,
@@ -30,4 +21,8 @@ html {
 
 .red-bottom {
   border-bottom: 3px solid #660500;
+}
+
+h1 {
+  font-size: 1.7rem;
 }

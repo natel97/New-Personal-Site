@@ -4,16 +4,12 @@
 }
 
 .link {
-  background: #0004;
+  background: #123;
   border-radius: 1rem;
-  padding: .8rem;
+  padding: 0.8rem;
   width: 80%;
   max-width: 400px;
   text-decoration: none;
   color: white;
   font-weight: bold;
-}
-
-.arrows-link::before {
-  content: ">";
 }

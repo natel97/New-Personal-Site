@@ -7,7 +7,7 @@ body::after {
   z-index: -2;
   background-color: #282c34;
   content: "";
-  background: linear-gradient(311deg, #1a1b1b, #045283);
+  background: linear-gradient(311deg, #1a1a1b, #024c6e);
   background-size: 400% 400%;
 
   animation: scroll-background 13s ease infinite;
